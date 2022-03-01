@@ -1,0 +1,10 @@
+body{
+background-color: rgb(188, 221, 136);    
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+}

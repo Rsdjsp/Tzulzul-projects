@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body>
+    <nav>
+      <p id="status"></p>
+      <p id="user-name"></p>
+      <!-- <button id="logout">Cerrar sesión</button> -->
+      <h3 id="userName"></h3>
+      <button id="logoutCookie">Cerrar sesión</button>
+    </nav>
+    <section class="login">
+      <form id="form">
+        <input type="email" name="email" required /><span>Email</span>
+        <br />
+        <input type="password" name="password" required /><span>Password</span>
+        <br />
+        <button>Login</button>
+      </form>
+    </section>
+    <section class="signUp">
+      <form id="form2">
+        <input type="text" name="firstName" required /><span> First Name</span>
+        <br />
+        <input type="text" name="lastName" required /><span> Last Name</span>
+        <br />
+        <input type="date" required name="birthday" /><span> Birthday</span>
+        <br />
+        <input type="text" required name="city" /><span> City</span>
+        <br />
+        <input type="email" required name="email" /><span> Email</span>
+        <br />
+        <input type="password" name="password" required /><span> Password</span>
+        <br />
+        <button>Sign Up</button>
+      </form>
+      <h4 id="message"></h4>
+    </section>
+
+    <button id="fetchUser">Consultar usuarios</button>
+    <div id="users">
+
+    </div>
+    <script src="./code.js"></script>
+  </body>
+</html>
