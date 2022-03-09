@@ -1,9 +1,9 @@
-import { doc, getDoc } from "firebase/firestore"
-import { database } from "../../../database"
+import { doc, getDoc } from "firebase/firestore";
+import { database } from "../../../database";
 
-export default async function getPost(req,res){
+export default async function getPost(req, res) {
+  const post = await getDoc(doc(database, "posts", req.query.idPost));
+  
 
-    const post =  await getDoc(doc(database,"posts",req.query.idPost))
-
-    return res.json(post.data())
+  return res.json(post.data());
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import React, { useEffect } from 'react'
 import AdminPage from '../../../components/AdminPage'
 import Link from 'next/link'
@@ -7,9 +8,9 @@ export async function getServerSideProps(context){
     const secure = context.req.connection.encrypted
     
     const url = `${secure?"https":"http"}://${context.req.headers.host}/api/posts`
-    
+   
     const res = await axios.get(url)
-    
+   
     return {
         props:{
             posts:res.data
@@ -17,7 +18,7 @@ export async function getServerSideProps(context){
     }
 }
 
-export default function Posts({posts}) {
+export default function Posts({ posts }) {
     return (
         <>
             <h1>Posts</h1>
@@ -35,6 +36,7 @@ export default function Posts({posts}) {
                         </div>
                     </div>
                     <Link href={`/admin/posts/${post.id}`}><h3 className='text-3xl font-bold mb-3 cursor-pointer'>{post.title}</h3></Link>
+                    
                     
                     <img src={post.image}></img>
                 </article>
