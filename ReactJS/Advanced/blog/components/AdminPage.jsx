@@ -29,8 +29,8 @@ export default function AdminPage({ children }) {
         </ul>
       </section>
 
-      <main className="flex justify-center">
-        <section className="w-9/12 bg-red-500">{children}</section>
+      <main className="flex justify-center text-white">
+        <section className="w-9/12 ">{children}</section>
       </main>
     </>
   );

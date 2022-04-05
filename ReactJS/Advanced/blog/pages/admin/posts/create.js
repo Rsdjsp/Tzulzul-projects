@@ -21,17 +21,19 @@ export default function Create() {
   const { data: session } = useSession();
   const [content, setContent] = useState("");
 
-  const titulo = useRef();
+  const title = useRef();
   const image = useRef();
+  const highlight = useRef();
 
   const saveContent = () => {
     console.log(content);
     axios
       .post("/api/posts/create", {
-        title: titulo.current.value,
+        title: title.current.value,
         author: session.user,
         image: image.current.value,
         date: new Date(),
+        highlight: highlight.current.checked,
         content,
       })
       .then((res) => {
@@ -48,7 +50,7 @@ export default function Create() {
         <input
           className="text-black"
           type="text"
-          ref={titulo}
+          ref={title}
           placeholder="Titulo de la publicación"
         ></input>
         <input
@@ -56,6 +58,13 @@ export default function Create() {
           type="text"
           ref={image}
           placeholder="Imagen de la publicación"
+        ></input>
+        <label htmlFor="highlight">¿Highlight?</label>
+        <input
+          id="highlight"
+          className="text-black"
+          type="checkbox"
+          ref={highlight}
         ></input>
         <MarkDownEditor
           value={content}
